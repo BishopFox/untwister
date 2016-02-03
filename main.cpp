@@ -210,7 +210,7 @@ int main(int argc, char *argv[])
     bool manualSeedMinFlag = false;
     bool manualSeedMaxFlag = false;
     bool timestampFlag = false;
-    uint32_t seed = 0;
+    uint64_t seed = 0;
     uint32_t generationDepth = 20;
     uint32_t min_bound = 0;
     uint32_t max_bound = -1;
@@ -252,7 +252,7 @@ int main(int argc, char *argv[])
             {
                 if(optarg != NULL)
                 {
-                    seed = strtoul(optarg, NULL, 10);
+                    seed = strtoll(optarg, NULL, 10);
                 }
                 generateFlag = true;
                 break;
