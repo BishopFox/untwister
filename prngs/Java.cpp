@@ -35,13 +35,13 @@ const std::string Java::getName()
 void Java::seed(int64_t value)
 {
     m_originalSeed = value;
-    m_seedValue = (value ^ 0x5DEECE66DL) & ((1L << 48) - 1);
+    m_seedValue = (value ^ 0x5DEECE66DL) & ((1LL << 48) - 1);
 }
 
 int32_t Java::next(int32_t bits)
 {
     /* Update the seed */
-    m_seedValue = (m_seedValue * 0x5DEECE66DL + 0xBL) & ((1L << 48) - 1);
+    m_seedValue = (m_seedValue * 0x5DEECE66DL + 0xBL) & ((1LL << 48) - 1);
     /* Return bits of the seed, masked out. */
     return (int32_t)(m_seedValue >> (48 - bits));
 }

@@ -50,7 +50,7 @@ public:
     virtual void setBounds(uint32_t, uint32_t) = 0;
     virtual int64_t getMinSeed() = 0;
     virtual int64_t getMaxSeed() = 0;
-
+    PRNG():m_isBounded(false) {};
     virtual ~PRNG(){};
 
 protected:
@@ -60,5 +60,4 @@ protected:
     uint32_t m_maxBound;
     bool m_isBounded;
 };
-
 #endif /* PRNG_H_ */
